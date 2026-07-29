@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'" />
+  <title>DiskMaster v2.0</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar__header">
+        <div class="dots">
+          <span class="dot dot--r"></span>
+          <span class="dot dot--y"></span>
+          <span class="dot dot--g"></span>
+        </div>
+        <div class="brand"><strong>disk</strong>master</div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <button class="nav__item is-active" data-target="dashboard">~/panel</button>
+        <button class="nav__item" data-target="analizar">~/analisis</button>
+        <button class="nav__item" data-target="explorar">~/explorar</button>
+        <button class="nav__item" data-target="gestionar">~/gestionar</button>
+        <button class="nav__item" data-target="recomendaciones">~/recomendaciones</button>
+        <button class="nav__item" data-target="ajustes">~/ajustes</button>
+        <button class="nav__item" data-target="historial">~/historial</button>
+      </nav>
+
+      <div class="sidebar__footer">v2.0 // demo estatica</div>
+    </aside>
+
+    <main class="main">
+      <!-- ============ DASHBOARD ============ -->
+      <section class="section is-active" id="dashboard">
+        <h1 class="title"><span class="accent">DISK</span>MASTER v2.0</h1>
+        <p class="subtitle">smart storage manager // gestor inteligente de almacenamiento</p>
+
+        <div class="prompt">&gt; scan --drive C: <span class="arg">// analisis rapido de la unidad principal</span><span class="cursor"></span></div>
+
+        <div class="grid">
+          <div class="card">
+            <div class="card__label">usado</div>
+            <div class="card__value card__value--blue">312 GB</div>
+            <div class="card__hint">65% de 480 GB</div>
+          </div>
+          <div class="card">
+            <div class="card__label">libre</div>
+            <div class="card__value">168 GB</div>
+            <div class="card__hint">35% disponible</div>
+          </div>
+          <div class="card">
+            <div class="card__label">duplicados</div>
+            <div class="card__value">6.2 GB</div>
+            <div class="card__hint">3 grupos detectados</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2 class="panel__title">uso de disco // C:</h2>
+          <div class="usage__meta"><span>312 GB usados</span><span>65%</span></div>
+          <div class="usage">
+            <div class="usage__seg usage__seg--sys" style="width: 28%"></div>
+            <div class="usage__seg usage__seg--doc" style="width: 17%"></div>
+            <div class="usage__seg usage__seg--media" style="width: 20%"></div>
+          </div>
+          <div class="legend">
+            <span class="legend__item"><i class="swatch swatch--sys"></i> sistema — 134 GB</span>
+            <span class="legend__item"><i class="swatch swatch--doc"></i> documentos — 82 GB</span>
+            <span class="legend__item"><i class="swatch swatch--media"></i> multimedia — 96 GB</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2 class="panel__title">archivos grandes recientes</h2>
+          <div class="list">
+            <div class="list__row">
+              <span class="list__name">backup_proyecto.zip <span class="list__meta">// C:/usuarios/kevin/backups</span></span>
+              <span class="list__size">2.1 GB</span>
+            </div>
+            <div class="list__row">
+              <span class="list__name">captura_pantalla.mp4 <span class="list__meta">// C:/usuarios/kevin/videos</span></span>
+              <span class="list__size">1.4 GB</span>
+            </div>
+            <div class="list__row">
+              <span class="list__name">node_modules.cache <span class="list__meta">// C:/dev/diskmaster</span></span>
+              <span class="list__size">890 MB</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">by kevin cabrera_<span class="cursor"></span></div>
+      </section>
+
+      <!-- ============ ANALIZAR ============ -->
+      <section class="section" id="analizar">
+        <div class="section__head">
+          <h2 class="section__title"><span class="accent">analizar</span> // escaneo de unidad</h2>
+          <p class="subtitle">resultados de demostracion, sin acceso real al disco</p>
+        </div>
+
+        <div class="toolbar">
+          <button class="btn" id="btn-escanear">escanear</button>
+          <button class="btn btn--ghost">detener</button>
+          <span class="tag" id="scan-state">inactivo</span>
+        </div>
+
+        <div class="term" id="scan-log">
+          <div class="term__line"><span class="term__tag term__tag--ok">[ok]</span><strong>particion verificada</strong> — C: NTFS 480 GB</div>
+          <div class="term__line"><span class="term__tag">[--]</span><strong>318 archivos indexados</strong> — 12 carpetas recorridas</div>
+          <div class="term__line"><span class="term__tag term__tag--warn">[!!]</span><strong>3 archivos duplicados detectados</strong> — 6.2 GB recuperables</div>
+        </div>
+
+        <div class="grid" style="margin-top: 18px;">
+          <div class="card">
+            <div class="card__label">archivos indexados</div>
+            <div class="card__value card__value--blue">318</div>
+            <div class="card__hint">ultima ejecucion demo</div>
+          </div>
+          <div class="card">
+            <div class="card__label">duplicados</div>
+            <div class="card__value">3</div>
+            <div class="card__hint">6.2 GB recuperables</div>
+          </div>
+          <div class="card">
+            <div class="card__label">carpetas pesadas</div>
+            <div class="card__value">7</div>
+            <div class="card__hint">&gt; 1 GB cada una</div>
+          </div>
+          <div class="card">
+            <div class="card__label">duracion</div>
+            <div class="card__value">00:12</div>
+            <div class="card__hint">simulado</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2 class="panel__title">carpetas con mayor peso</h2>
+          <table>
+            <thead>
+              <tr><th>ruta</th><th>tipo</th><th class="num">tamaño</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>C:/dev/diskmaster/node_modules</td><td>cache</td><td class="num">4.8 GB</td></tr>
+              <tr><td>C:/usuarios/kevin/videos</td><td>multimedia</td><td class="num">3.6 GB</td></tr>
+              <tr><td>C:/usuarios/kevin/backups</td><td>archivo</td><td class="num">2.9 GB</td></tr>
+              <tr><td>C:/windows/temp</td><td>temporal</td><td class="num">1.2 GB</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ EXPLORAR ============ -->
+      <section class="section" id="explorar">
+        <div class="section__head">
+          <h2 class="section__title"><span class="accent">explorar</span> // arbol de archivos</h2>
+          <p class="subtitle">contenido ficticio de demostracion</p>
+        </div>
+
+        <div class="toolbar">
+          <input type="text" placeholder="filtrar por nombre..." />
+          <select>
+            <option>todos los tipos</option>
+            <option>multimedia</option>
+            <option>documentos</option>
+            <option>cache</option>
+          </select>
+          <button class="btn btn--ghost">actualizar</button>
+        </div>
+
+        <div class="panel" style="margin-top: 0;">
+          <h2 class="panel__title">C:/usuarios/kevin</h2>
+          <ul class="tree">
+            <li><span class="dirname">documentos/</span>
+              <ul>
+                <li><span class="filename">informe_anual.pdf</span><span class="size">4.2 MB</span></li>
+                <li><span class="filename">presupuesto.xlsx</span><span class="size">820 KB</span></li>
+              </ul>
+            </li>
+            <li><span class="dirname">videos/</span>
+              <ul>
+                <li><span class="filename">captura_pantalla.mp4</span><span class="size">1.4 GB</span></li>
+                <li><span class="filename">demo_producto.mov</span><span class="size">640 MB</span></li>
+              </ul>
+            </li>
+            <li><span class="dirname">backups/</span>
+              <ul>
+                <li><span class="filename">backup_proyecto.zip</span><span class="size">2.1 GB</span></li>
+                <li><span class="filename">backup_proyecto_old.zip</span><span class="size">2.1 GB</span></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h2 class="panel__title">detalle</h2>
+          <table>
+            <thead>
+              <tr><th>nombre</th><th>tipo</th><th>modificado</th><th class="num">tamaño</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>backup_proyecto.zip</td><td>archivo comprimido</td><td>2026-07-12</td><td class="num">2.1 GB</td></tr>
+              <tr><td>captura_pantalla.mp4</td><td>video</td><td>2026-07-10</td><td class="num">1.4 GB</td></tr>
+              <tr><td>node_modules.cache</td><td>cache</td><td>2026-07-09</td><td class="num">890 MB</td></tr>
+              <tr><td>demo_producto.mov</td><td>video</td><td>2026-06-28</td><td class="num">640 MB</td></tr>
+              <tr><td>informe_anual.pdf</td><td>documento</td><td>2026-06-15</td><td class="num">4.2 MB</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ GESTIONAR ============ -->
+      <section class="section" id="gestionar">
+        <div class="section__head">
+          <h2 class="section__title"><span class="accent">gestionar</span> // mover o limpiar</h2>
+          <p class="subtitle">controles visuales sin accion real sobre el sistema</p>
+        </div>
+
+        <div class="toolbar">
+          <button class="btn">mover seleccion</button>
+          <button class="btn btn--ghost">comprimir</button>
+          <button class="btn btn--danger">eliminar</button>
+          <span class="tag tag--warn">modo demo</span>
+        </div>
+
+        <div class="panel" style="margin-top: 0;">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:32px;"><input type="checkbox" /></th>
+                <th>archivo</th><th>ubicacion</th><th>estado</th><th class="num">tamaño</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>backup_proyecto_old.zip</td><td>C:/usuarios/kevin/backups</td>
+                <td><span class="tag tag--danger">duplicado</span></td><td class="num">2.1 GB</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>captura_pantalla.mp4</td><td>C:/usuarios/kevin/videos</td>
+                <td><span class="tag tag--warn">grande</span></td><td class="num">1.4 GB</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>node_modules.cache</td><td>C:/dev/diskmaster</td>
+                <td><span class="tag">cache</span></td><td class="num">890 MB</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>temp_instalador.msi</td><td>C:/windows/temp</td>
+                <td><span class="tag tag--ok">seguro</span></td><td class="num">420 MB</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="panel">
+          <h2 class="panel__title">destino</h2>
+          <div class="field">
+            <div>
+              <div class="field__label">carpeta destino</div>
+              <div class="field__hint">ruta de demostracion</div>
+            </div>
+            <input type="text" value="D:/almacen/diskmaster" />
+          </div>
+          <div class="field">
+            <div>
+              <div class="field__label">crear copia de seguridad</div>
+              <div class="field__hint">antes de mover archivos</div>
+            </div>
+            <label class="toggle"><input type="checkbox" checked /><span class="toggle__track"></span></label>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ RECOMENDACIONES ============ -->
+      <section class="section" id="recomendaciones">
+        <div class="section__head">
+          <h2 class="section__title"><span class="accent">recomendaciones</span> // liberar espacio</h2>
+          <p class="subtitle">sugerencias de demostracion</p>
+        </div>
+
+        <div class="panel" style="margin-top: 0;">
+          <div class="list">
+            <div class="list__row">
+              <span class="list__name">eliminar archivos duplicados
+                <span class="list__meta">// 3 grupos en backups y descargas</span></span>
+              <span class="tag tag--ok">libera 6.2 GB</span>
+            </div>
+            <div class="list__row">
+              <span class="list__name">mover videos a unidad secundaria
+                <span class="list__meta">// C:/usuarios/kevin/videos → D:</span></span>
+              <span class="tag tag--ok">libera 3.6 GB</span>
+            </div>
+            <div class="list__row">
+              <span class="list__name">limpiar caches de desarrollo
+                <span class="list__meta">// node_modules, build, .cache</span></span>
+              <span class="tag tag--ok">libera 4.8 GB</span>
+            </div>
+            <div class="list__row">
+              <span class="list__name">vaciar carpeta temporal del sistema
+                <span class="list__meta">// C:/windows/temp</span></span>
+              <span class="tag tag--warn">libera 1.2 GB</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid" style="margin-top: 18px;">
+          <div class="card">
+            <div class="card__label">espacio recuperable total</div>
+            <div class="card__value card__value--blue">15.8 GB</div>
+            <div class="card__hint">estimacion demo</div>
+          </div>
+          <div class="card">
+            <div class="card__label">acciones sugeridas</div>
+            <div class="card__value">4</div>
+            <div class="card__hint">sin ejecutar</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ AJUSTES ============ -->
+      <section class="section" id="ajustes">
+        <div class="section__head">
+          <h2 class="section__title"><span class="accent">ajustes</span> // configuracion</h2>
+          <p class="subtitle">panel visual, sin persistencia</p>
+        </div>
+
+        <div class="panel" style="margin-top: 0;">
+          <h2 class="panel__title">general</h2>
+          <div class="field">
+            <div><div class="field__label">escaneo automatico al iniciar</div>
+              <div class="field__hint">ejecuta un analisis rapido</div></div>
+            <label class="toggle"><input type="checkbox" checked /><span class="toggle__track"></span></label>
+          </div>
+          <div class="field">
+            <div><div class="field__label">incluir archivos ocultos</div>
+              <div class="field__hint">muestra elementos del sistema</div></div>
+            <label class="toggle"><input type="checkbox" /><span class="toggle__track"></span></label>
+          </div>
+          <div class="field">
+            <div><div class="field__label">unidad predeterminada</div>
+              <div class="field__hint">objetivo de los analisis</div></div>
+            <select><option>C:</option><option>D:</option><option>E:</option></select>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2 class="panel__title">umbrales</h2>
+          <div class="field">
+            <div><div class="field__label">tamaño minimo de archivo grande</div>
+              <div class="field__hint">en MB</div></div>
+            <input type="number" value="500" />
+          </div>
+          <div class="field">
+            <div><div class="field__label">carpeta de cuarentena</div>
+              <div class="field__hint">destino de elementos movidos</div></div>
+            <input type="text" value="D:/diskmaster/cuarentena" />
+          </div>
+        </div>
+
+        <div class="toolbar" style="margin-top: 18px;">
+          <button class="btn">guardar</button>
+          <button class="btn btn--ghost">restablecer</button>
+        </div>
+      </section>
+
+      <!-- ============ HISTORIAL ============ -->
+      <section class="section" id="historial">
+        <div class="section__head">
+          <h2 class="section__title"><span class="accent">historial</span> // operaciones</h2>
+          <p class="subtitle">registro de demostracion</p>
+        </div>
+
+        <div class="panel" style="margin-top: 0;">
+          <table>
+            <thead>
+              <tr><th>fecha</th><th>operacion</th><th>detalle</th><th>resultado</th><th class="num">espacio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>2026-07-28 21:14</td><td>analisis</td><td>C: escaneo completo</td><td><span class="tag tag--ok">ok</span></td><td class="num">—</td></tr>
+              <tr><td>2026-07-26 09:02</td><td>limpieza</td><td>cache de desarrollo</td><td><span class="tag tag--ok">ok</span></td><td class="num">4.8 GB</td></tr>
+              <tr><td>2026-07-21 18:47</td><td>mover</td><td>videos → D:/almacen</td><td><span class="tag tag--ok">ok</span></td><td class="num">3.6 GB</td></tr>
+              <tr><td>2026-07-18 12:30</td><td>eliminar</td><td>duplicados en backups</td><td><span class="tag tag--warn">parcial</span></td><td class="num">2.1 GB</td></tr>
+              <tr><td>2026-07-11 08:05</td><td>analisis</td><td>D: escaneo rapido</td><td><span class="tag tag--danger">error</span></td><td class="num">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# DiskMaster V2 - Portable Storage Manager
+# Requirements for Windows 10/11 portable application
+
+# GUI Framework
+PyQt6>=6.5.0
+
+# System Information
+psutil>=5.9.0
+
+# Windows-specific functionality
+pywin32>=306
+
+# Build tool (for creating portable executable)
+PyInstaller>=6.0.0
+
+# Additional utilities for future features
+# send2trash>=1.8.0  # For safe file deletion (future)
+# watchdog>=3.0.0   # For file system monitoring (future)

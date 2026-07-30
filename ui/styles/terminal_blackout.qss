@@ -1,0 +1,633 @@
+/*
+ * Terminal Blackout Blue Stylesheet
+ * DiskMaster V2 - Professional Storage Manager
+ */
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+* {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 10px;
+}
+
+QMainWindow {
+    background-color: #000000;
+}
+
+QWidget {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+/* ============================================
+   SIDEBAR STYLES
+   ============================================ */
+
+QFrame#sidebar {
+    background-color: #0A0A0A;
+    border-right: 1px solid #333333;
+}
+
+QLabel#app-title {
+    color: #2E8FE0;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+QPushButton#nav-button {
+    background-color: transparent;
+    color: #888888;
+    border: none;
+    text-align: left;
+    padding: 10px;
+    font-family: Consolas;
+    font-size: 10px;
+}
+
+QPushButton#nav-button:hover {
+    background-color: #1A1A3A;
+    color: #FFFFFF;
+}
+
+QPushButton#nav-button:pressed {
+    background-color: #2E8FE0;
+    color: #FFFFFF;
+}
+
+QPushButton#nav-button:checked {
+    background-color: #2E8FE0;
+    color: #FFFFFF;
+}
+
+/* ============================================
+   CONTENT AREA STYLES
+   ============================================ */
+
+QFrame#content-area {
+    background-color: #000000;
+}
+
+/* ============================================
+   WELCOME PANEL STYLES
+   ============================================ */
+
+QLabel#welcome-title {
+    color: #2E8FE0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+QLabel#welcome-subtitle {
+    color: #888888;
+    font-size: 10px;
+}
+
+QLabel#welcome-message {
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+QPushButton#analyze-button {
+    background-color: #2E8FE0;
+    color: #FFFFFF;
+    border: none;
+    padding: 15px 30px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+QPushButton#analyze-button:hover {
+    background-color: #3EA3F1;
+}
+
+QPushButton#analyze-button:pressed {
+    background-color: #1E7FD0;
+}
+
+QPushButton#analyze-button:disabled {
+    background-color: #444444;
+    color: #888888;
+}
+
+/* ============================================
+   DISK CARD STYLES
+   ============================================ */
+
+QFrame#disk-card {
+    background-color: #0A0A0A;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+QFrame#disk-card:hover {
+    border: 1px solid #2E8FE0;
+}
+
+QFrame#disk-card:selected {
+    border: 2px solid #2E8FE0;
+    background-color: #1A1A3A;
+}
+
+QLabel#disk-name {
+    color: #2E8FE0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+QLabel#disk-info {
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+QLabel#disk-info-label {
+    color: #888888;
+    font-size: 9px;
+}
+
+QProgressBar#disk-progress {
+    background-color: #1A1A1A;
+    border: 1px solid #333333;
+    border-radius: 2px;
+    height: 8px;
+    text-align: center;
+}
+
+QProgressBar#disk-progress::chunk {
+    background-color: #2E8FE0;
+}
+
+/* ============================================
+   FILE EXPLORER STYLES
+   ============================================ */
+
+QTreeView#file-explorer {
+    background-color: #000000;
+    border: none;
+    selection-background-color: #2E8FE0;
+    selection-color: #FFFFFF;
+    font-size: 10px;
+}
+
+QTreeView#file-explorer::item {
+    padding: 5px;
+}
+
+QTreeView#file-explorer::item:hover {
+    background-color: #1A1A3A;
+}
+
+QTreeView#file-explorer::item:selected {
+    background-color: #2E8FE0;
+    color: #FFFFFF;
+}
+
+QHeaderView#file-explorer-header {
+    background-color: #0A0A0A;
+    border: none;
+    border-bottom: 1px solid #333333;
+    padding: 5px;
+}
+
+QHeaderView#file-explorer-header::section {
+    background-color: #0A0A0A;
+    color: #888888;
+    border: none;
+    border-right: 1px solid #333333;
+    padding: 5px;
+    font-weight: bold;
+}
+
+/* ============================================
+   FOLDER ITEM STYLES
+   ============================================ */
+
+QFrame#folder-item {
+    background-color: #0A0A0A;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+QFrame#folder-item:hover {
+    border: 1px solid #2E8FE0;
+    background-color: #1A1A3A;
+}
+
+QFrame#folder-item:selected {
+    border: 2px solid #2E8FE0;
+    background-color: #1A1A3A;
+}
+
+QLabel#folder-name {
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+QLabel#folder-size {
+    color: #2E8FE0;
+    font-size: 9px;
+}
+
+/* ============================================
+   FILE ITEM STYLES
+   ============================================ */
+
+QFrame#file-item {
+    background-color: #0A0A0A;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+QFrame#file-item:hover {
+    border: 1px solid #2E8FE0;
+    background-color: #1A1A3A;
+}
+
+QFrame#file-item:selected {
+    border: 2px solid #2E8FE0;
+    background-color: #1A1A3A;
+}
+
+QLabel#file-name {
+    color: #FFFFFF;
+    font-size: 9px;
+}
+
+QLabel#file-size {
+    color: #888888;
+    font-size: 8px;
+}
+
+/* ============================================
+   INFO PANEL STYLES
+   ============================================ */
+
+QFrame#info-panel {
+    background-color: #0A0A0A;
+    border-left: 1px solid #333333;
+    padding: 15px;
+}
+
+QLabel#info-title {
+    color: #2E8FE0;
+    font-size: 12px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333333;
+}
+
+QLabel#info-label {
+    color: #888888;
+    font-size: 9px;
+    margin-top: 10px;
+}
+
+QLabel#info-value {
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+
+QPushButton {
+    background-color: #2E8FE0;
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 16px;
+    font-size: 10px;
+    border-radius: 2px;
+}
+
+QPushButton:hover {
+    background-color: #3EA3F1;
+}
+
+QPushButton:pressed {
+    background-color: #1E7FD0;
+}
+
+QPushButton:disabled {
+    background-color: #444444;
+    color: #888888;
+}
+
+QPushButton#secondary-button {
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+QPushButton#secondary-button:hover {
+    background-color: #444444;
+}
+
+QPushButton#secondary-button:pressed {
+    background-color: #222222;
+}
+
+QPushButton#danger-button {
+    background-color: #AA0000;
+    color: #FFFFFF;
+}
+
+QPushButton#danger-button:hover {
+    background-color: #CC0000;
+}
+
+QPushButton#danger-button:pressed {
+    background-color: #880000;
+}
+
+/* ============================================
+   PROGRESS BAR STYLES
+   ============================================ */
+
+QProgressBar {
+    background-color: #1A1A1A;
+    border: 1px solid #333333;
+    border-radius: 2px;
+    height: 10px;
+    text-align: center;
+}
+
+QProgressBar::chunk {
+    background-color: #2E8FE0;
+}
+
+QProgressBar#warning-progress::chunk {
+    background-color: #FFAA00;
+}
+
+QProgressBar#danger-progress::chunk {
+    background-color: #FF0000;
+}
+
+/* ============================================
+   SCROLLBAR STYLES
+   ============================================ */
+
+QScrollBar:vertical {
+    background-color: #0A0A0A;
+    width: 12px;
+    border: none;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #333333;
+    border: none;
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #444444;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    background-color: #0A0A0A;
+    border: none;
+    height: 0px;
+}
+
+QScrollBar:horizontal {
+    background-color: #0A0A0A;
+    height: 12px;
+    border: none;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: #333333;
+    border: none;
+    border-radius: 6px;
+    min-width: 20px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background-color: #444444;
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    background-color: #0A0A0A;
+    border: none;
+    width: 0px;
+}
+
+/* ============================================
+   STATUS MESSAGES
+   ============================================ */
+
+QLabel#status-info {
+    color: #2E8FE0;
+    font-size: 10px;
+}
+
+QLabel#status-warning {
+    color: #FFAA00;
+    font-size: 10px;
+}
+
+QLabel#status-error {
+    color: #FF0000;
+    font-size: 10px;
+}
+
+QLabel#status-success {
+    color: #00FF00;
+    font-size: 10px;
+}
+
+/* ============================================
+   DIALOG STYLES
+   ============================================ */
+
+QDialog {
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+}
+
+QLabel#dialog-title {
+    color: #2E8FE0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+QLabel#dialog-message {
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+QDialogButtonBox {
+    background-color: #0A0A0A;
+}
+
+QDialogButtonBox QPushButton {
+    background-color: #2E8FE0;
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 16px;
+    font-size: 10px;
+}
+
+/* ============================================
+   INPUT STYLES
+   ============================================ */
+
+QLineEdit {
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+    border: 1px solid #333333;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #2E8FE0;
+}
+
+QTextEdit {
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+    border: 1px solid #333333;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+QTextEdit:focus {
+    border: 1px solid #2E8FE0;
+}
+
+QComboBox {
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+    border: 1px solid #333333;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+QComboBox:hover {
+    border: 1px solid #2E8FE0;
+}
+
+QComboBox::drop-down {
+    background-color: #1A1A1A;
+    border: none;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+    border: 1px solid #333333;
+    selection-background-color: #2E8FE0;
+}
+
+/* ============================================
+   CHECKBOX STYLES
+   ============================================ */
+
+QCheckBox {
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    background-color: #1A1A1A;
+    border: 1px solid #333333;
+    border-radius: 2px;
+}
+
+QCheckBox::indicator:hover {
+    border: 1px solid #2E8FE0;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #2E8FE0;
+    border: 1px solid #2E8FE0;
+}
+
+/* ============================================
+   TAB WIDGET STYLES
+   ============================================ */
+
+QTabWidget::pane {
+    background-color: #000000;
+    border: 1px solid #333333;
+}
+
+QTabBar::tab {
+    background-color: #0A0A0A;
+    color: #888888;
+    border: 1px solid #333333;
+    border-bottom: none;
+    padding: 8px 16px;
+    margin-right: 2px;
+}
+
+QTabBar::tab:selected {
+    background-color: #000000;
+    color: #2E8FE0;
+    border-bottom: 1px solid #000000;
+}
+
+QTabBar::tab:hover {
+    background-color: #1A1A3A;
+    color: #FFFFFF;
+}
+
+/* ============================================
+   MENU STYLES
+   ============================================ */
+
+QMenuBar {
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+    border-bottom: 1px solid #333333;
+}
+
+QMenuBar::item {
+    background-color: transparent;
+    padding: 5px 10px;
+}
+
+QMenuBar::item:selected {
+    background-color: #1A1A3A;
+}
+
+QMenu {
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+    border: 1px solid #333333;
+}
+
+QMenu::item {
+    padding: 5px 20px;
+}
+
+QMenu::item:selected {
+    background-color: #2E8FE0;
+    color: #FFFFFF;
+}
+
+/* ============================================
+   TOOLTIP STYLES
+   ============================================ */
+
+QToolTip {
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+    border: 1px solid #333333;
+    padding: 5px;
+    font-size: 9px;
+}
